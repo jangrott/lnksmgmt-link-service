@@ -10,14 +10,14 @@ services:
 
 install:
   - gradle assemble
-  - docker build -t lnksmgmt_link_service .
+  - docker build -t jangrott/lnksmgmt_link_service .
 
 before_script:
-  - docker run -d -p 9010:9010 lnksmgmt_link_service
+  - docker run -d -p 9010:9010 jangrott/lnksmgmt_link_service
 
 script:
   - gradle check
-  - docker ps | grep -q lnksmgmt_link_service
+  - docker ps | grep -q jangrott/lnksmgmt_link_service
 
 after_success:
   - docker login -e $DOCKER_EMAIL -u $DOCKER_USER -p $DOCKER_PASS
