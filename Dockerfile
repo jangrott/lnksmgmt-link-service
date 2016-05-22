@@ -1,6 +1,6 @@
 FROM java:8
 
-ADD build/libs/link-service-1.0-SNAPSHOT.jar linkServiceApp.jar
+ADD build/libs/link-service-*.jar linkServiceApp.jar
 
 RUN bash -c 'touch /linkServiceApp.jar'
 

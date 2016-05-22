@@ -2,3 +2,13 @@ language: java
 
 jdk:
   - oraclejdk8
+
+services:
+  - docker
+
+install:
+  docker build -t lnksmgmt_link_service .
+  docker run -d -p 9010:9010 lnksmgmt_link_service
+
+script:
+  docker ps | grep -q lnksmgmt_link_service
