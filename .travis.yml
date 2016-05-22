@@ -12,7 +12,7 @@ env:
 services:
   - docker
 
-install:\
+install:
   - gradle assemble
   - docker build -t $REPO .
 
