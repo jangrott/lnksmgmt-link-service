@@ -1,3 +1,5 @@
+sudo: required
+
 language: java
 
 jdk:
@@ -7,8 +9,12 @@ services:
   - docker
 
 install:
+  - gradle assemble
   - docker build -t lnksmgmt_link_service .
+
+before_script:
   - docker run -d -p 9010:9010 lnksmgmt_link_service
 
 script:
+  - gradle check
   - docker ps | grep -q lnksmgmt_link_service
