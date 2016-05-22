@@ -18,3 +18,7 @@ before_script:
 script:
   - gradle check
   - docker ps | grep -q lnksmgmt_link_service
+
+after_success:
+  - docker login -e $DOCKER_EMAIL -u $DOCKER_USER -p $DOCKER_PASS
+  - docker push jangrott/lnksmgmt_link_service
