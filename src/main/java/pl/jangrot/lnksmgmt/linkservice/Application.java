@@ -14,7 +14,7 @@ public class Application {
 
     @RequestMapping(value = "/")
     public List<String> links() {
-        return Arrays.asList("http://onet.pl", "http://wykop.pl");
+        return Arrays.asList("http://onet.pl", "http://wykop.pl", "http://allegro.pl");
     }
 
     public static void main(String[] args) {
